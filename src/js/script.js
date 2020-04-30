@@ -88,6 +88,7 @@
       thisProduct.formInputs = thisProduct.form.querySelectorAll(select.all.formInputs);
       thisProduct.cartButton = thisProduct.element.querySelector(select.menuProduct.cartButton);
       thisProduct.priceElem = thisProduct.element.querySelector(select.menuProduct.priceElem);
+      thisProduct.imageWrapper = thisProduct.element.querySelectorAll(select.menuProduct.imageWrapper);
 
     }
 
@@ -154,6 +155,7 @@
 
       /* START LOOP: for each paramId in thisProduct.data.params */
       for (let paramId in thisProduct.data.params){
+        //console.log(paramId);
 
         /* save the element in thisProduct.data.params with key paramId as const param */
         const param = thisProduct.data.params[paramId];
@@ -170,7 +172,6 @@
 
             /* add price of option to variable price */
             price = price + option.price;
-            console.log('price(plus):', price);
 
             /* END IF: if option is selected and option is not default */
             /* START ELSE IF: if option is not selected and option is default */
@@ -178,9 +179,18 @@
 
             /* deduct price of option from price */
             price = price - option.price;
-            console.log('price(minus):', price);
 
             /* END ELSE IF: if option is not selected and option is default */
+          }
+          const activeImages = thisProduct.element.querySelectorAll('.' + paramId + '-' + optionId);
+          if (optionSelected){
+            for (let activeImage of activeImages){
+              activeImage.classList.add(classNames.menuProduct.imageVisible);
+            }
+          }else {
+            for (let activeImage of activeImages){
+              activeImage.classList.remove(classNames.menuProduct.imageVisible);
+            }
           }
           /* END LOOP: for each optionId in param.options */
         }
@@ -188,7 +198,6 @@
       }
       /* set the contents of thisProduct.priceElem to be the value of variable price */
       thisProduct.priceElem.innerHTML = price;
-      console.log('thisPrice: ',thisProduct.priceElem);
     }
   }
 
