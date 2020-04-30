@@ -219,6 +219,7 @@
       const thisWidget = this;
 
       thisWidget.getelements(element);
+      thisWidget.value = settings.amountWidget.defaultValue;
       thisWidget.setValue(thisWidget.input.value);
       thisWidget.initActions();
 
@@ -239,8 +240,9 @@
       const thisWidget = this;
       const newValue = parseInt(value);
 
-      /* TODO: add validation */
-      const nValue = newValue != newValue;
+      /* validation */
+
+      const nValue = newValue !== thisWidget.input.value;
       const minValue = newValue >= settings.amountWidget.defaultMin;
       const maxValue = newValue <= settings.amountWidget.defaultMax;
 
