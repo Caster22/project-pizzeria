@@ -246,7 +246,7 @@
       thisProduct.price = thisProduct.priceSingle * thisProduct.amountWidget.value;
 
       /* set the contents of thisProduct.priceElem to be the value of variable price */
-      thisProduct.priceElem.innerHTML = price;
+      thisProduct.priceElem.innerHTML = thisProduct.price;
 
       //console.log('thisParams: ',thisProduct.params);
     }
@@ -257,7 +257,7 @@
       thisProduct.amountWidget = new AmountWidget(thisProduct.amountWidgetElem);
 
       thisProduct.amountWidgetElem.addEventListener('updated', function () {
-
+        thisProduct.processOrder();
       });
     }
 
@@ -413,6 +413,7 @@
         thisCart.subtotalPrice += product.price;
         thisCart.totalNumber += product.amount;
         console.log('product:', product);
+        console.log('amount:', product.amount);
       }
       thisCart.totalPrice = thisCart.subtotalPrice + thisCart.deliveryFee;
 
@@ -423,6 +424,7 @@
       for (let key of thisCart.renderTotalsKeys){
         for (let elem of thisCart.dom[key]){
           elem.innerHTML = thisCart[key];
+          console.log('lol',elem.innerHTML);
         }
       }
     }
