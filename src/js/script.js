@@ -417,10 +417,10 @@
         deliveryFee: thisCart.deliveryFee,
         address: 'test',
         totalPrice: thisCart.totalPrice,
-        products: [thisCart.productData],
+        products: [],
       };
-      for (let product of thisCart.products){
-        product.getData();
+      for (let cartProduct of thisCart.products){
+        payload.products.push(cartProduct.getData());
       }
 
       const options = {
@@ -559,13 +559,14 @@
     getData(){
       const thisCartProduct = this;
 
-      thisCartProduct.productData = {
+      const productInfo = {
         id: thisCartProduct.id,
         amount: thisCartProduct.amount,
         price: thisCartProduct.price,
         priceSingle: thisCartProduct.priceSingle,
         params: thisCartProduct.params,
       };
+      return productInfo;
     }
   }
 
