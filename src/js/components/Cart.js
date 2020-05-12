@@ -1,5 +1,5 @@
 import {settings, select, classNames, templates} from '../settings.js';
-import utils from '../utils.js';
+import {utils} from '../utils.js';
 import CartProduct from './CartProduct.js';
 
 
@@ -22,11 +22,12 @@ class Cart{
     thisCart.dom = {};
     thisCart.dom.wrapper = element;
 
+
     thisCart.dom.toggleTrigger = thisCart.dom.wrapper.querySelector(select.cart.toggleTrigger);
     thisCart.dom.productList = thisCart.dom.wrapper.querySelector(select.cart.productList);
     thisCart.dom.form = thisCart.dom.wrapper.querySelector(select.cart.form);
     thisCart.dom.inputs = thisCart.dom.wrapper.querySelector(select.all.formInputs);
-    console.log('log2:', thisCart.dom.inputs);
+    //console.log('log2:', thisCart.dom.inputs);
 
     thisCart.renderTotalsKeys = ['totalNumber', 'totalPrice', 'subtotalPrice', 'deliveryFee'];
 
@@ -114,19 +115,19 @@ class Cart{
     for (let product of thisCart.products){
       thisCart.subtotalPrice += product.price;
       thisCart.totalNumber += product.amount;
-      console.log('product:', product);
-      console.log('amount:', product.amount);
+      //console.log('product:', product);
+      //console.log('amount:', product.amount);
     }
     thisCart.totalPrice = thisCart.subtotalPrice + thisCart.deliveryFee;
 
-    console.log('totalNumber:', thisCart.totalNumber);
-    console.log('subtotalPrice:', thisCart.subtotalPrice);
-    console.log('totalPrice:', thisCart.totalPrice);
+    //console.log('totalNumber:', thisCart.totalNumber);
+    //console.log('subtotalPrice:', thisCart.subtotalPrice);
+    //console.log('totalPrice:', thisCart.totalPrice);
 
     for (let key of thisCart.renderTotalsKeys){
       for (let elem of thisCart.dom[key]){
         elem.innerHTML = thisCart[key];
-        console.log('lol',elem.innerHTML);
+        //console.log('lol',elem.innerHTML);
       }
     }
   }
