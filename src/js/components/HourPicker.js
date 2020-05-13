@@ -8,17 +8,22 @@ class HourPicker extends  BaseWidget{
   constructor(wrapper) {
     super(wrapper, settings.hours.open);
 
-    this.dom.input = this.dom.wrapper.querySelector(select.widgets.hourPicker.input);
-    this.dom.output = this.dom.wrapper.querySelector(select.widgets.hourPicker.output);
+    const thisWidget = this;
 
-    this.initPlugin();
-    this.value = this.dom.input;
+    thisWidget.dom.input = thisWidget.dom.wrapper.querySelector(select.widgets.hourPicker.input);
+    thisWidget.dom.output = thisWidget.dom.wrapper.querySelector(select.widgets.hourPicker.output);
+
+    thisWidget.initPlugin();
+    thisWidget.value = thisWidget.dom.input.value;
+    console.log('lol:', thisWidget.dom.input);
   }
 
   initPlugin(){
-    rangeSlider.create(this.dom.input);
-    this.dom.input.addEventListener('input', function () {
-      this.value = this.dom.input;
+    const thisWidget = this;
+
+    rangeSlider.create(thisWidget.dom.input);
+    thisWidget.dom.input.addEventListener('input', function () {
+      thisWidget.value = thisWidget.dom.input.value;
     });
   }
 
@@ -30,7 +35,8 @@ class HourPicker extends  BaseWidget{
     return true;
   }
   renderValue() {
-    this.dom.output.innerHTML = this.value;
+    const thisWidget = this;
+    thisWidget.dom.output.innerHTML = thisWidget.value;
   }
 
 }
