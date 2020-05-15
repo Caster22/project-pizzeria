@@ -15,7 +15,7 @@ class HourPicker extends  BaseWidget{
 
     thisWidget.initPlugin();
     thisWidget.value = thisWidget.dom.input.value;
-    console.log('lol:', thisWidget.dom.input);
+    //console.log('lol:', thisWidget.dom.input);
   }
 
   initPlugin(){
