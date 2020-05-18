@@ -8,6 +8,7 @@ import {utils} from '../utils.js';
 class Booking {
   constructor(element) {
     const thisBooking = this;
+    //let lastDate = '';
 
     thisBooking.render(element);
     thisBooking.initWidgets();
@@ -63,9 +64,9 @@ class Booking {
         ]);
       })
       .then(function ([bookings, eventsCurrent, eventsRepeat]) {
-        //console.log(bookings);
-        //console.log(eventsCurrent);
-        //console.log(eventsRepeat);
+        console.log(bookings);
+        console.log(eventsCurrent);
+        console.log(eventsRepeat);
         thisBooking.parseData(bookings, eventsCurrent, eventsRepeat);
       });
   }
@@ -122,32 +123,54 @@ class Booking {
 
     thisBooking.date = thisBooking.datePicker.value;
     thisBooking.hour = utils.hourToNumber(thisBooking.hourPicker.value);
+    //console.log('date: ', thisBooking.date);
+    //console.log('hour: ', thisBooking.hour);
 
-    let allAvailable = false;
 
-    if (
-      typeof thisBooking.booked[thisBooking.date] == 'undefined'
-      ||
-      typeof thisBooking.booked[thisBooking.date][thisBooking.hour] == 'undefined'
-    ){
-      allAvailable = true;
-    }
+    thisBooking.table = null;
 
-    for (let table of thisBooking.dom.tables){
+    for (let table of thisBooking.dom.tables) {
       let tableId = table.getAttribute(settings.booking.tableIdAttribute);
+
+      table.addEventListener('click', function (event) {
+        event.preventDefault();
+        //console.log('clicked table ', tableNumber);
+        table.classList.add(classNames.booking.tableBooked);
+        thisBooking.sendOrder();
+
+        if (!thisBooking.date) {
+          table.classList.remove(classNames.booking.tableBooked);
+        }
+      });
+
       if (!isNaN(tableId)){
         tableId = parseInt(tableId);
       }
+
       if (
-        !allAvailable
-        &&
-        thisBooking.booked[thisBooking.date][thisBooking.hour].includes(tableId) > -1
+        thisBooking.booked[thisBooking.date] !== undefined &&
+        thisBooking.booked[thisBooking.date][thisBooking.hour] !== undefined &&
+        thisBooking.booked[thisBooking.date][thisBooking.hour].includes(tableId)
       ){
         table.classList.add(classNames.booking.tableBooked);
-      }else {
+      } else {
         table.classList.remove(classNames.booking.tableBooked);
       }
     }
+  }
+
+  sendOrder(){
+    const thisBooking = this;
+
+    const url = settings.db.url + '/' + settings.db.booking;
+    const payload = {
+      date: thisBooking.date,
+      hour: thisBooking.hour,
+      table: thisBooking.table,
+      //duration: thisBooking.
+
+    };
+    console.log('payload', payload.table);
   }
 
   render(element){

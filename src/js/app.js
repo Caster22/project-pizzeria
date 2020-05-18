@@ -120,7 +120,7 @@ const app = {
     //console.log('thisApp:', thisApp);
     //console.log('classNames:', classNames);
     //console.log('settings:', settings);
-    //console.log('templates:', templates);
+    console.log('templates:', templates);
 
     thisApp.initData();
     thisApp.initCart();
