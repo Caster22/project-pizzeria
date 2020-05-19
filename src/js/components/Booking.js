@@ -8,7 +8,6 @@ import {utils} from '../utils.js';
 class Booking {
   constructor(element) {
     const thisBooking = this;
-    //let lastDate = '';
 
     thisBooking.render(element);
     thisBooking.initWidgets();
@@ -158,7 +157,11 @@ class Booking {
 
     for (let table of thisBooking.dom.tables){
       table.addEventListener('click', function () {
-        table.classList.add(classNames.booking.tableBooked, classNames.booking.tableClicked);
+        if (table.classList.contains(classNames.booking.tableBooked)){
+          console.log('Its already booked!');
+        }else{
+          table.classList.add(classNames.booking.tableBooked, classNames.booking.tableClicked);
+        }
       });
     }
   }
@@ -166,19 +169,28 @@ class Booking {
   sendBooking(){
     const thisBooking = this;
 
+    let bookedTable = '';
+
+    const clickedTables = thisBooking.dom.wrapper.querySelectorAll('.' + classNames.booking.tableClicked);
+    for (let table of clickedTables){
+      let tableId = parseInt(table.getAttribute(settings.booking.tableIdAttribute));
+      //console.log('log2:', tableId);
+      bookedTable = tableId;
+    }
+
     const url = settings.db.url + '/' + settings.db.booking;
     const payload = {
       date: thisBooking.date,
       hour: utils.numberToHour(thisBooking.hour),
-      table: thisBooking.dom.tables,
+      table: bookedTable,
       duration: thisBooking.hoursAmount.correctValue,
       ppl: thisBooking.peopleAmount.correctValue,
       starters: [],
     };
     console.log('payload:', payload);
 
-    const waterStarter = document.getElementById('water');
-    const breadStarter = document.getElementById('bread');
+    const waterStarter = document.getElementById(select.booking.water);
+    const breadStarter = document.getElementById(select.booking.bread);
 
     if (waterStarter.checked == true && breadStarter.checked == true){
       payload.starters.push(waterStarter.value, breadStarter.value);
@@ -187,7 +199,6 @@ class Booking {
     }else if (waterStarter.checked == true){
       payload.starters.push(waterStarter.value);
     }
-
 
     const options = {
       method: 'POST',

@@ -63,8 +63,8 @@ export const select = {
     peopleAmount: '.people-amount',
     hoursAmount: '.hours-amount',
     tables: '.floor-plan .table',
-    bread: 'input[value="bread"]:checked',
-    water: 'input[value="water"]:checked',
+    bread: 'bread',
+    water: 'water',
   },
   nav: {
     links: '.main-nav a',
