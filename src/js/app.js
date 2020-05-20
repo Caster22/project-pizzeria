@@ -2,6 +2,7 @@ import {settings, select, classNames, /*templates*/} from './settings.js';
 import Product from './components/Product.js';
 import Cart from './components/Cart.js';
 import Booking from './components/Booking.js';
+import WelcomePage from './components/WelcomePage.js';
 
 
 const app = {
@@ -13,6 +14,7 @@ const app = {
     thisApp.navLinks = document.querySelectorAll(select.nav.links);
 
     const idFromHash = window.location.hash.replace('#/', '');
+    //console.log(idFromHash);
 
     let pageMatchingHash = thisApp.pages[0].id;
 
@@ -110,8 +112,18 @@ const app = {
     const thisApp = this;
 
     const bookingElem = document.querySelector(select.containerOf.booking);
+    console.log('bookingElem:',bookingElem);
 
     thisApp.booking = new Booking(bookingElem);
+  },
+
+  initWelcome: function(){
+    const thisApp = this;
+
+    const welcomeElem = document.querySelector(select.containerOf.welcome);
+    console.log('welcome:',welcomeElem);
+
+    thisApp.welcome = new WelcomePage(welcomeElem);
   },
 
   init: function(){
@@ -126,6 +138,7 @@ const app = {
     thisApp.initCart();
     thisApp.initPages();
     thisApp.initBooking();
+    thisApp.initWelcome();
   },
 };
 

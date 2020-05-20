@@ -64,9 +64,9 @@ class Booking {
         ]);
       })
       .then(function ([bookings, eventsCurrent, eventsRepeat]) {
-        console.log(bookings);
-        console.log(eventsCurrent);
-        console.log(eventsRepeat);
+        //console.log(bookings);
+        //console.log(eventsCurrent);
+        //console.log(eventsRepeat);
         thisBooking.parseData(bookings, eventsCurrent, eventsRepeat);
       });
   }
@@ -94,7 +94,7 @@ class Booking {
         }
       }
     }
-    console.log('thisBooking.booked: ', thisBooking.booked);
+    //console.log('thisBooking.booked: ', thisBooking.booked);
 
     thisBooking.updateDOM();
   }
@@ -105,7 +105,7 @@ class Booking {
     if (typeof  thisBooking.booked[date] == 'undefined'){
       thisBooking.booked[date] = {};
     }
-    console.log('hour', hour);
+    //console.log('hour', hour);
     const startHour = utils.hourToNumber(hour);
 
     for (let hourBlock = startHour; hourBlock < startHour + duration; hourBlock+= 0.5 ){
@@ -158,7 +158,7 @@ class Booking {
     for (let table of thisBooking.dom.tables){
       table.addEventListener('click', function () {
         if (table.classList.contains(classNames.booking.tableBooked)){
-          console.log('Its already booked!');
+          //console.log('Its already booked!');
         }else{
           table.classList.add(classNames.booking.tableBooked, classNames.booking.tableClicked);
         }
