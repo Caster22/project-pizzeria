@@ -112,7 +112,7 @@ const app = {
     const thisApp = this;
 
     const bookingElem = document.querySelector(select.containerOf.booking);
-    console.log('bookingElem:',bookingElem);
+    //console.log('bookingElem:',bookingElem);
 
     thisApp.booking = new Booking(bookingElem);
   },
@@ -121,7 +121,7 @@ const app = {
     const thisApp = this;
 
     const welcomeElem = document.querySelector(select.containerOf.welcome);
-    console.log('welcome:',welcomeElem);
+    //console.log('welcome:',welcomeElem);
 
     thisApp.welcome = new WelcomePage(welcomeElem);
   },

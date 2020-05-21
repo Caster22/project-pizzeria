@@ -71,6 +71,14 @@ export const select = {
   nav: {
     links: '.main-nav a',
   },
+  carousel: {
+    track: '.carousel__track',
+    buttonRight: '.slider__button-right',
+    buttonLeft: '.slider__button-left',
+    nav: '.carousel__nav',
+    current: '.currentSlide',
+    currentDotSlide: '.current-slide',
+  }
 };
 
 export const classNames = {
@@ -92,6 +100,10 @@ export const classNames = {
   pages: {
     active: 'active',
   },
+  carousel: {
+    current: 'currentSlide',
+    dotSlide: 'current-slide',
+  }
 };
 
 export const settings = {

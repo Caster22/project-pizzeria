@@ -37,6 +37,7 @@
   margin-top: 3rem;
   border: none;
   transition: 3s;
+
   &:hover .orderBook{
     h5{
       transition: 3s;
@@ -64,3 +65,80 @@
 }
 
 /* CAROUSEL */
+
+.web-carousel{
+  position: relative;
+  height: 195px;
+  width: 80%;
+  margin: 0 auto;
+
+  .carousel__track-container{
+    background-color: lightcoral;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+
+    .carousel__track{
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      position: relative;
+      height: 100%;
+      transition: transform 250ms ease-in;
+
+      .carousel__slide{
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 100%;
+      }
+    }
+  }
+}
+
+.carousel__images{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.carousel__button{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  border: none;
+  background: transparent;
+  cursor: pointer;
+
+  img {
+    width: 15px;
+  }
+}
+
+.slider__button-left{
+  left: -30px;
+}
+
+.slider__button-right{
+  left: 530px;
+}
+
+.carousel__nav{
+  display: flex;
+  justify-content: center;
+  padding: 35px 0;
+
+  .carousel__indicator{
+    border: 0;
+    border-radius: 50%;
+    width: 11px;
+    height: 11px;
+    background: rgba(0,0,0,.3);
+    margin: 0 7px;
+    cursor: pointer;
+  }
+
+  .current-slide{
+    background: rgba(0,0,0,1);
+  }
+}
