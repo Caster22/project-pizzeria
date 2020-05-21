@@ -10,7 +10,7 @@
   padding-top: 10px;
   font-size: 10px;
 }
-/* PAGE */
+/* PAGE-OPENER */
 
 .welcome-wrapper{
   background-color: white;
@@ -55,6 +55,7 @@
 
 .opener {
   padding: 0 30px;
+  margin-bottom: 60px;
 }
 
 .opening {
@@ -140,5 +141,40 @@
 
   .current-slide{
     background: rgba(0,0,0,1);
+  }
+}
+
+/* GALLERY */
+
+.gallery{
+  margin-top: 100px;
+
+  .row-space{
+    padding-top: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+
+    .box-spacer{
+      padding: 0 5px;
+    }
+  }
+
+  img {
+    height: 195px;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+}
+
+/* FOOTER */
+
+.view-more{
+  margin-top: 25px;
+  padding-left: 22px;
+
+  p{
+    color: red;
+    text-decoration: underline;
   }
 }
