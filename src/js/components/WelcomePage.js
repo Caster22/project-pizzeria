@@ -7,7 +7,7 @@ class WelcomePage {
     const thisWelcome = this;
 
     thisWelcome.render(element);
-    thisWelcome.carousel();
+    //thisWelcome.carousel();
   }
 
   render(element){
@@ -28,6 +28,8 @@ class WelcomePage {
     const dotsNav = document.querySelector(select.carousel.nav);
     const dots = Array.from(dotsNav.children);
 
+    console.log(slides);
+
     const slideWidth = slides[0].getBoundingClientRect().width;
     //console.log(dotsNav);
 
@@ -46,6 +48,18 @@ class WelcomePage {
       currentDot.classList.remove(classNames.carousel.dotSlide);
       targetDot.classList.add(classNames.carousel.dotSlide);
     };
+
+    /*const sliderLoop = (prevSlide, currentSlide, currentDot, previousDot) => {
+      if (prevSlide == null){
+        prevSlide = slides.lastChild;
+
+        moveToSlide(track, currentSlide, prevSlide);
+        updateDots(currentDot, previousDot);
+      }else {
+        moveToSlide(track, currentSlide, prevSlide);
+        updateDots(currentDot, previousDot);
+      }
+    };*/
 
     prevButton.addEventListener('click', () => {
       const currentSlide = track.querySelector(select.carousel.current);

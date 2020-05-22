@@ -67,6 +67,62 @@
 
 /* CAROUSEL */
 
+.slide {
+  padding-left: 20px;
+  padding-right: 20px;
+
+  img {
+    margin: 10px;
+    float: left;
+    height: 195px;
+    width: 32%;
+    object-fit: cover;
+    border-radius: 5px;
+
+  }
+
+  .opinion{
+    padding-top: 20px;
+
+    p{
+      margin-left: 200px;
+      padding-left: 40px;
+    }
+
+    h5{
+      margin-left: 200px;
+      padding-left: 40px;
+    }
+  }
+}
+
+.dots-slide{
+  list-style: none;
+  padding: 0;
+  padding-left: 44%;
+
+
+  li{
+    display: inline-block;
+    padding: 20px 5px;
+
+    button{
+      color: transparent;
+      font-size: 8px;
+      border: none;
+      border-radius: 50%;
+      background-color: grey;
+    }
+  }
+
+  .slick-active{
+    button{
+      background-color: black;
+    }
+  }
+}
+
+/*
 .web-carousel{
   position: relative;
   height: 195px;
@@ -143,7 +199,7 @@
     background: rgba(0,0,0,1);
   }
 }
-
+*/
 /* GALLERY */
 
 .gallery{
