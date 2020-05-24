@@ -13,6 +13,7 @@ export const select = {
     pages: '#pages',
     booking: '.booking-wrapper',
     welcome: '.welcome-wrapper',
+    orderWelcome: '#welcomePages'
   },
   all: {
     menuProducts: '#product-list > .product',
@@ -70,6 +71,7 @@ export const select = {
   },
   nav: {
     links: '.main-nav a',
+    order: '.welcome-page',
   },
   carousel: {
     track: '.carousel__track',

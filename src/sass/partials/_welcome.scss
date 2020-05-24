@@ -1,5 +1,9 @@
 /* GLOBALS */
 
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
 .orderBook-title{
   text-align: center;
   color: white;
@@ -22,34 +26,100 @@
   padding: 36px 0;
 }
 
-.leftPic {
-  padding-right: 3px;
+.order-pic{
+  overflow: hidden;
   padding-left: 45px;
-}
+  padding-right: 5px;
+  position: relative;
 
-.rightPic {
-  padding-left: 3px;
-  padding-right: 45px;
-  padding-bottom: 0px;
-}
-
-.card{
-  margin-top: 3rem;
-  border: none;
-  transition: 3s;
-
-  &:hover .orderBook{
-    h5{
-      transition: 3s;
-      display: block;
-    }
+  .order-tab{
+    position: absolute;
+    color: white;
+    top: 40%;
+    right: -15%;
+    transform: translate(-50%,-50%);
+    transition: 1s ease;
   }
 
   img{
-    width: 100%;
     height: 120px;
+    width: 100%;
     object-fit: cover;
-    border-radius: 2px;
+    border-radius: 8px;
+    display: block;
+  }
+}
+
+.overlay-tab{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: transparent;
+  width: 100%;
+  height: 0;
+  transition: 1s ease;
+  overflow: hidden;
+
+
+  .order-subTab{
+    font-size: 15px;
+    color: white;
+    padding-left: 45px;
+    text-align: center;
+  }
+
+  .book-subTab{
+    color: white;
+    font-size: 15px;
+    padding-right: 45px;
+    text-align: center;
+  }
+}
+
+.order-pic:hover .order-tab{
+  top: 30%;
+}
+
+.booking-pic:hover .book-tab{
+  top: 30%;
+}
+
+.order-pic:hover .overlay-tab{
+  height: 43%;
+}
+
+.booking-pic:hover .overlay-tab{
+  height: 43%;
+}
+
+
+.row-opener{
+  height: 130px;
+}
+
+.booking-pic{
+  overflow: hidden;
+  padding-left: 5px;
+  padding-right: 45px;
+  position: relative;
+
+  .book-tab{
+    position: absolute;
+    color: white;
+    top: 40%;
+    right: 0%;
+    transform: translate(-50%,-50%);
+    margin-bottom: 0;
+    transition: 1s ease;
+  }
+
+  img{
+    height: 120px;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+    display: block;
   }
 }
 
@@ -60,7 +130,7 @@
 
 .opening {
   background-color: #ff6666;
-  border-radius: 2px;
+  border-radius: 8px;
   height: 120px;
   margin-top: 0;
 }
@@ -200,6 +270,7 @@
   }
 }
 */
+
 /* GALLERY */
 
 .gallery{
@@ -210,9 +281,53 @@
     padding-left: 30px;
     padding-right: 30px;
 
-    .box-spacer{
+    .spacer{
       padding: 0 5px;
     }
+
+    .box-spacer{
+      overflow: hidden;
+      border-radius: 8px;
+      background-color: black;
+      position: relative;
+      text-align: center;
+      transition: 1s;
+
+      p{
+        color: white;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        visibility: hidden;
+        font-size: 30px;
+
+        &:hover{
+          color: #ff6666;
+          cursor: pointer;
+          transition: .5s;
+        }
+      }
+
+      .icon_1{
+        left: 35%;
+      }
+
+      .icon_2{
+        left: 60%;
+      }
+    }
+  }
+
+  .box-spacer:hover img{
+    opacity: 0.4;
+    transition: 1s;
+  }
+
+  .box-spacer:hover p{
+    opacity: 1;
+    transition: 2s;
+    visibility: visible;
   }
 
   img {
@@ -220,6 +335,7 @@
     width: 100%;
     object-fit: cover;
     border-radius: 8px;
+    transition: 1s;
   }
 }
 
