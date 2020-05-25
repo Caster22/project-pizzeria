@@ -70,7 +70,7 @@ export const select = {
     water: 'water',
   },
   nav: {
-    links: '.main-nav a',
+    links: '.main-nav a, .booking-pic a, .order-pic a',
     order: '.welcome-page',
   },
   carousel: {
