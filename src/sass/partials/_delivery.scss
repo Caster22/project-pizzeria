@@ -1,0 +1,23 @@
+.delivery-wrapper{
+  background-color: white;
+  margin-top: 36px;
+  border-radius: 5px;
+}
+
+.delivery{
+  padding: 30px 0;
+
+  &__body--text{
+    color: $color-newMain;
+    text-align: center;
+
+    h3{
+      padding-top: 30px;
+    }
+  }
+
+  &__body--image{
+    max-width: 100%;
+    padding-top: 25%;
+  }
+}

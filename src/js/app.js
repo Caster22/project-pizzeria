@@ -3,6 +3,7 @@ import Product from './components/Product.js';
 import Cart from './components/Cart.js';
 import Booking from './components/Booking.js';
 import WelcomePage from './components/WelcomePage.js';
+import DeliveryPage from './components/DeliveryPage.js';
 
 
 const app = {
@@ -127,6 +128,14 @@ const app = {
     thisApp.welcome = new WelcomePage(welcomeElem);
   },
 
+  initDelivery: function(){
+    const thisApp = this;
+
+    const deliveryElem = document.querySelector(select.containerOf.delivery);
+
+    thisApp.delivery = new DeliveryPage(deliveryElem);
+  },
+
   init: function(){
     const thisApp = this;
     //console.log('*** App starting ***');
@@ -137,6 +146,7 @@ const app = {
 
     thisApp.initData();
     thisApp.initCart();
+    thisApp.initDelivery();
     thisApp.initBooking();
     thisApp.initWelcome();
     thisApp.initPages();
