@@ -219,14 +219,14 @@
       "date": "2020-06-25",
       "hour": "8:00",
       "table": 4,
-      "repeat": "daily",
+      "repeat": "weekly",
       "duration": 2,
       "ppl": 3,
       "starters": ["bread", "beer"]
     },
     {
       "id": 3,
-      "date": "2020-06-01",
+      "date": "2020-06-25",
       "hour": "12:00",
       "table": 3,
       "repeat": "daily",
@@ -236,11 +236,11 @@
     },
     {
       "id": 4,
-      "date": "2020-06-20",
-      "hour": "13:00",
+      "date": "2020-06-25",
+      "hour": "17:00",
       "table": 2,
       "repeat": "daily",
-      "duration": 4,
+      "duration": 2,
       "ppl": 3,
       "starters": []
     },

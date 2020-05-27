@@ -92,6 +92,10 @@ class Booking {
         for (let loopDate = minDate; loopDate <= maxDate; loopDate = utils.addDays(loopDate, 1)){
           thisBooking.makeBooked(utils.dateToStr(loopDate), item.hour, item.duration, item.table);
         }
+      }else if (item.repeat == 'weekly'){
+        for (let loopDate = minDate; loopDate <= maxDate; loopDate = utils.addDays(loopDate, 7)){
+          thisBooking.makeBooked(utils.dateToStr(loopDate), item.hour, item.duration, item.table);
+        }
       }
     }
     //console.log('thisBooking.booked: ', thisBooking.booked);
