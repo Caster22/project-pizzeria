@@ -64,9 +64,9 @@ class Booking {
         ]);
       })
       .then(function ([bookings, eventsCurrent, eventsRepeat]) {
-        //console.log(bookings);
-        //console.log(eventsCurrent);
-        //console.log(eventsRepeat);
+        console.log(bookings);
+        console.log(eventsCurrent);
+        console.log(eventsRepeat);
         thisBooking.parseData(bookings, eventsCurrent, eventsRepeat);
       });
   }
@@ -191,13 +191,22 @@ class Booking {
 
     const waterStarter = document.getElementById(select.booking.water);
     const breadStarter = document.getElementById(select.booking.bread);
+    const beerStarter = document.getElementById(select.booking.beer);
 
-    if (waterStarter.checked == true && breadStarter.checked == true){
+    if (waterStarter.checked == true && breadStarter.checked == true && beerStarter.checked == true){
+      payload.starters.push(waterStarter.value, breadStarter.value, beerStarter.value);
+    }else if (breadStarter.checked == true && beerStarter.checked == true){
+      payload.starters.push(breadStarter.value, beerStarter.value);
+    } else if (waterStarter.checked == true && beerStarter.checked == true){
+      payload.starters.push(waterStarter.value, beerStarter.value);
+    } else if (waterStarter.checked == true && breadStarter.checked == true){
       payload.starters.push(waterStarter.value, breadStarter.value);
-    }else if (breadStarter.checked == true){
+    } else if (breadStarter.checked == true){
       payload.starters.push(breadStarter.value);
     }else if (waterStarter.checked == true){
       payload.starters.push(waterStarter.value);
+    }else if (beerStarter.checked == true){
+      payload.starters.push(beerStarter.value);
     }
 
     const options = {

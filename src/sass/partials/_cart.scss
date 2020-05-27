@@ -1,14 +1,16 @@
 .cart {
   position: absolute;
-  width: 300px; // CODE CHANGED
+  width: 350px; // CODE CHANGED
   right: 0;
-  top: $base-size;
+  margin-left: ($base-size * 3);
+  top: ($base-size * -0.2);
   padding: ($base-size) ($base-size * 1.5);
-  background: $color-light;
-  border-radius: $radius;
-  color: $color-main;
+  background: $color-newLight;
+  border-radius: 10%;
+  border: 1px solid $color-newMain;
+  color: $color-newMain;
   font-size: $base-size;
-  box-shadow: 0 0 $base-size rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 $base-size rgba(0, 0, 0, 0.4);
   z-index: 9999;
 
   &.active {
@@ -30,24 +32,24 @@
   }
 
   &__total-number {
-    background: $color-main;
+    background: $color-newMain;
     width: 30px;
     height: 30px;
-    border-radius: 50%;
+    border-radius: 20%;
     color: $color-light;
     text-align: center;
     line-height: 28px;
   }
 
   &__total-price {
-    color: $color-dark;
+    color: $color-newDark;
   }
 
   &__content {
     @include accordion-closed();
     opacity: 0;
     animation: flipdown 0.5s ease both;
-    color: $color-dark;
+    color: $color-newDark;
   }
 
   &__order-summary {
@@ -57,7 +59,8 @@
 
     .widget-amount {
       @include flex(column-reverse, center, space-between);
-      margin: 0 $base-size 0 0;
+      margin: 0 ($base-size * 0.5) 0 0;
+      width: 40px;
 
       input {
         margin: 0;
@@ -67,6 +70,15 @@
 
       &:hover .btn-quantity--lt {
         opacity: 1;
+        position: relative;
+        text-align: center;
+        align-content: center;
+        padding: 10px;
+        margin-left: 20px;
+
+        i{
+          @include center();
+        }
       }
 
     }
@@ -112,19 +124,25 @@
   // CODE ADDED END
 
   &__action-buttons {
-    @include flex(row, center, space-between);
+    @include flex(column, center, space-between);
     font-size: 0;
 
     i {
-      font-size: 14px;
+      font-size: 7px;
     }
 
     li {
-      margin: 0 0 0 $base-size;
+      height: auto;
+      width: 40px;
+      margin: 0 ($base-size * 0.5) 0 ($base-size * 0.2);
     }
 
     a {
-      color: $color-main;
+      width: 40px;
+      margin: 0;
+      padding: 5px;
+      font-size: 7px;
+      color: $color-header;
 
       &:hover {
         color: lighten($color-main, 3%);
@@ -138,7 +156,7 @@
     margin: $base-size 0 0 0; // CODE CHANGED
     padding: $base-size 0;
     list-style-type: none;
-    border-top: 1px solid lighten($color-dark, 70%);
+    border-top: 1px solid lighten($color-newMain, 10%);
 
     li {
       @include flex(row, center, space-between);
@@ -146,7 +164,7 @@
   }
 
   &__order-confirmation {
-    border-top: 1px solid lighten($color-dark, 70%);
+    border-top: 1px solid lighten($color-newMain, 10%);
     padding: $base-size 0 0 0;
 
     input, button {

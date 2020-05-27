@@ -8,6 +8,7 @@
   <title>Pizzeria</title>
   <link href="https://fonts.googleapis.com/css?family=Lato:400,300i,700%7COswald:300,500,700&amp;subset=latin-ext" rel="stylesheet">
   <link href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond:700i|Fira+Sans" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
   <link rel="stylesheet" href="vendor/range-slider.min.css">
   <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
@@ -19,45 +20,46 @@
     <div class="container">
       <div class="header__wrapper">
         <div class="logo">
-          <h1 class="logo__title"><span>Mamma</span>Mia!</h1>
-          <h2 class="logo__subtitle">the best homemade Italian food</h2>
+          <h1 class="logo__title"><span>Hell's~</span>Cookie!</h1>
+          <h2 class="logo__subtitle logo__underline logo__underline--stars">the most crazy cookies you can think of!</h2>
         </div>
         <div class="main-nav">
-          <a href="#welcome">Welcome</a>
-          <a href="#order">Order</a>
-          <a href="#booking">Booking</a>
-        </div>
-        <div id="cart" class="cart">
-          <div class="cart__summary">
-            <span class="cart__total-number">5</span>
-            <span class="cart__total-price">Total price: $<strong>0</strong></span>
-            <i class="fas fa-chevron-down"></i>
-            <i class="fas fa-shopping-cart cart__icon"></i>
-          </div>
-          <div class="cart__content">
-            <form class="cart__order">
-              <ul class="cart__order-summary no-spacing">
-              </ul>
-              <ul class="cart__order-price">
-                <li class="cart__order-subtotal">
-                  <span class="cart__order-price-name">Subtotal:</span>
-                  <span class="cart__order-price-sum">$<strong>0</strong></span>
-                </li>
-                <li class="cart__order-delivery">
-                  <span class="cart__order-price-name">Delivery:</span>
-                  <span class="cart__order-price-sum">$<strong>0</strong></span>
-                </li>
-                <li class="cart__order-total">
-                  <span class="cart__order-price-name"><strong>Total:</strong></span>
-                  <span class="cart__order-price-sum">$<strong>0</strong></span>
-                </li>
-              </ul>
-              <div class="cart__order-confirmation">
-                <input type="tel" name="phone" placeholder="Your phone">
-                <input type="text" name="address" placeholder="Your address">
-                <button type="submit" class="btn-secondary">Order</button>
-              </div>
-            </form>
+          <a href="#welcome">Home</a>
+          <a href="#order">Setup</a>
+          <a href="#booking">Table</a>
+          <a href="#delivery">Delivery</a>
+          <div id="cart" class="cart">
+            <div class="cart__summary">
+              <span class="cart__total-number">0</span>
+              <span class="cart__total-price">Total sum: $<strong>0</strong></span>
+              <i class="fas fa-chevron-down"></i>
+              <i class="fas fa-money-bill-wave cart__icon"></i>
+            </div>
+            <div class="cart__content">
+              <form class="cart__order">
+                <ul class="cart__order-summary no-spacing">
+                </ul>
+                <ul class="cart__order-price">
+                  <li class="cart__order-subtotal">
+                    <span class="cart__order-price-name">Subtotal:</span>
+                    <span class="cart__order-price-sum">$<strong>0</strong></span>
+                  </li>
+                  <li class="cart__order-delivery">
+                    <span class="cart__order-price-name">Delivery:</span>
+                    <span class="cart__order-price-sum">$<strong>0</strong></span>
+                  </li>
+                  <li class="cart__order-total">
+                    <span class="cart__order-price-name"><strong>Total:</strong></span>
+                    <span class="cart__order-price-sum">$<strong>0</strong></span>
+                  </li>
+                </ul>
+                <div class="cart__order-confirmation">
+                  <input type="tel" name="phone" placeholder="Phone number">
+                  <input type="text" name="address" placeholder="Adress">
+                  <button type="submit" class="btn-secondary">Order</button>
+                </div>
+              </form>
+            </div>
           </div>
         </div>
       </div>
@@ -78,149 +80,79 @@
 
   <script id="template-welcome-page" type="text/x-handlebars-template">
     <div class="welcome-page">
-      <div class="row row-opener">
-        <div class="col-md-6 order-pic" id="welcomePages" >
-          <img src="images/assets/pizza-1.jpg" alt="pizza-1">
-          <a href="#order">
-            <h3 class="order-tab">ORDER ONLINE</h3>
-            <div class="overlay-tab">
-              <h5 class="order-subTab">
-                Delicious food delivered to your home
-              </h5>
+      <section class="opener">
+        <div class="row">
+          <div class="col-6 opener__list">
+            <div class="row row-border">
+              <div class="col-6 opener__setup">
+                <a href="#order">
+                  <img src="https://c1.wallpaperflare.com/preview/706/179/614/bakery-coffee-c-cafe.jpg" alt="setup">
+                </a>
+              </div>
+              <div class="col-6 opener__text">
+                <h3 class="opener__setup--header">SETUP</h3>
+                <p>Choose your own setup from our craziest toppings you can ever think!</p>
+              </div>
             </div>
-          </a>
-        </div>
-        <div class="col-md-6 booking-pic">
-          <img src="images/assets/pizza-2.jpg" alt="pizza-2">
-          <a href="#booking">
-            <h3 class="book-tab">BOOK A TABLE</h3>
-            <div class="overlay-tab">
-              <h5 class="book-subTab">
-                Delicious food delivered to your table
-              </h5>
+            <div class="row row-border">
+              <div class="col-6 opener__setup">
+                <a href="#booking">
+                  <img src="https://www.goralpoleca.pl/thumb/galeria/11389/450/300/resize/apartament-sweet-orange.jpg" alt="table">
+                </a>
+              </div>
+              <div class="col-6 opener__text">
+                <h3 class="opener__setup--header">TABLE</h3>
+                <p>Book now one from our tables and be sure that you will have place to eat!</p>
+              </div>
             </div>
-          </a>
-        </div>
-      </div>
-      <div class="opener">
-        <div class="card opening justify-content-center align-items-center ">
-          <div class="card-body position-absolute">
-            <h3 class="opening-hours orderBook-title">OPENING HOURS:</h3>
-            <h5 class="orderBook-title">TUE-SUN, 12PM-12AM</h5>
-          </div>
-        </div>
-      </div>
-      <!--<div class="web-carousel">
-        <button class="carousel__button slider__button-left">
-          <img src="images/assets/left.svg" alt="left-arrow">
-        </button>
-
-        <div class="carousel__track-container">
-          <ul class="carousel__track">
-            <li class="carousel__slide currentSlide">
-              <img class="carousel__images" src="images/assets/pizza-3.jpg" alt="pizza3">
-            </li>
-            <li class="carousel__slide">
-              <img class="carousel__images" src="images/assets/pizza-6.jpg" alt="pizza6">
-            </li>
-            <li class="carousel__slide">
-              <img class="carousel__images" src="images/assets/pizza-5.jpg" alt="pizza5">
-            </li>
-          </ul>
-        </div>
-
-        <button class="carousel__button slider__button-right">
-          <img src="images/assets/right.svg" alt="right-arrow">
-        </button>
-
-        <div class="carousel__nav">
-          <button class="carousel__indicator current-slide"></button>
-          <button class="carousel__indicator"></button>
-          <button class="carousel__indicator"></button>
-        </div>
-      </div> -->
-      <div class="slide-container">
-        <div class="slide">
-          <img src="images/assets/pizza-4.jpg" alt="pizza4">
-          <div class="opinion">
-            <h5>Superb food!</h5>
-            <p>Had dinner with girl friends. Menu is perfect, something for everyone.
-              Service was awesome and Jason was very accommodating. Will be back definitely!
-            </p>
-          </div>
-        </div>
-        <div class="slide">
-          <img src="images/assets/pizza-3.jpg" alt="pizza3">
-          <div class="opinion">
-            <h5>Superb food!</h5>
-            <p>I had lunch with some of my colleagues at Echo on Day 1.
-              I had the wedge salad - it was delicious. On Night 2,
-              I enjoyed a drink at the bar. I had a Margarita.
-              The service was excellent.</p>
-          </div>
-        </div>
-        <div class="slide">
-          <img src="images/assets/pizza-2.jpg" alt="pizza2">
-          <div class="opinion">
-            <h5>Superb food!</h5>
-            <p>Although we didn't go into the onsite restaurant,
-              we ordered some food at the bar a few times and it was delicious.
-              The bar area and lobby were nice and open, good place to relax
-              and meet friends.</p>
-          </div>
-        </div>
-      </div>
-      <div class="gallery">
-        <div class="row row-space">
-          <div class="col-md-4 spacer">
-            <div class="box-spacer">
-              <img src="images/assets/pizza-4.jpg" alt="pizza4">
-              <p class="icon_1"><i class="fas fa-heart"></i></p>
-              <p class="icon_2"><i class="fas fa-share-alt"></i></p>
+            <div class="row row-border">
+              <div class="col-6 opener__setup">
+                <a href="#delivery">
+                  <img src="https://i.pinimg.com/originals/8b/d3/1f/8bd31fbe7199736d88375f064d6e52cf.jpg" alt="delivery">
+                </a>
+              </div>
+              <div class="col-6 opener__text">
+                <h3 class="opener__setup--header">DELIVERY</h3>
+                <p>Order something from our menu and get it fresh in your home!</p>
+              </div>
             </div>
           </div>
-          <div class="col-md-4 spacer">
-            <div class="box-spacer">
-              <img src="images/assets/pizza-5.jpg" alt="pizza5">
-              <p class="icon_1"><i class="fas fa-heart"></i></p>
-              <p class="icon_2"><i class="fas fa-share-alt"></i></p>
+          <div class="col-6 opener__time--container">
+            <div class="opener__time--content">
+              <h2 class="opener__time--header">We are open:</h2>
+              <p class="opener__time--header opener__time--body">Monday - Friday<br>From 8 AM to 8 PM</p>
             </div>
-          </div>
-          <div class="col-md-4 spacer">
-            <div class="box-spacer">
-              <img src="images/assets/pizza-6.jpg" alt="pizza6">
-              <p class="icon_1"><i class="fas fa-heart"></i></p>
-              <p class="icon_2"><i class="fas fa-share-alt"></i></p>
-            </div>
+            <img class="opener__time--img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTofxTYlszK9AJT5a5cCuG-IcyN1GX2JKS2xicdApOM0TCD7Sme&usqp=CAU" alt="cookieCat">
           </div>
         </div>
-        <div class="row row-space">
-          <div class="col-md-4 spacer">
-            <div class="box-spacer">
-              <img src="images/assets/pizza-7.jpg" alt="pizza7">
-              <p class="icon_1"><i class="fas fa-heart"></i></p>
-              <p class="icon_2"><i class="fas fa-share-alt"></i></p>
-            </div>
-          </div>
-          <div class="col-md-4 spacer">
-            <div class="box-spacer">
-              <img src="images/assets/pizza-8.jpg" alt="pizza8">
-              <p class="icon_1"><i class="fas fa-heart"></i></p>
-              <p class="icon_2"><i class="fas fa-share-alt"></i></p>
-            </div>
-          </div>
-          <div class="col-md-4 spacer">
-            <div class="box-spacer">
-              <img src="images/assets/pizza-9.jpg" alt="pizza9">
-              <p class="icon_1"><i class="fas fa-heart"></i></p>
-              <p class="icon_2"><i class="fas fa-share-alt"></i></p>
-            </div>
+      </section>
+      <section class="slider">
+        <div class="slider__content">
+          <img class="slider__content--img" src="https://images.squarespace-cdn.com/content/v1/5418a5bae4b0877352524377/1417901289224-1PYCVGGR6BK9CP1JO5JD/ke17ZwdGBToddI8pDm48kGRKL4JIl0FV9_gnSO4xknsUqsxRUqqbr1mOJYKfIPR7LoDQ9mXPOjoJoqy81S2I8N_N4V1vUb5AoIIIbLZhVYy7Mythp_T-mtop-vrsUOmeInPi9iDjx9w8K4ZfjXt2dr_4a0Jznzw0OCRTJVMM15xP37X5RQsGYt-cipN4dBgkpC969RuPXvt2ZwyzUXQf7Q/image-asset.jpeg" alt="cookie1">
+        </div>
+        <div class="slider__content">
+          <img class="slider__content--img" src="https://www.instagram.com/p/B2XvTt3jKiO/media/?size=l" alt="cookie2">
+        </div>
+        <div class="slider__content">
+          <img class="slider__content--img" src="https://s3.amazonaws.com/secretsaucefiles/photos/images/000/011/363/large/Screen_Shot_2016-09-19_at_7.21.19_PM.png?1474338620" alt="cookie3">
+        </div>
+        <div class="slider__content">
+          <img class="slider__content--img" src="https://i.pinimg.com/originals/fa/01/1d/fa011d1fe1514aa353d8a039680de3b0.jpg" alt="cookie4">
+        </div>
+        <div class="slider__content">
+          <img class="slider__content--img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5a7z5kn8qnF4VmCQ6XjzxRp72psqvA95Wbljt22YDMlktdjk9&s" alt="cookie5">
+        </div>
+        <div class="slider__content">
+          <img class="slider__content--img" src="https://i.pinimg.com/originals/66/e4/cd/66e4cda25a37f744669d8f0c155d9123.png" alt="cookie6">
+        </div>
+      </section>
+      <section class="gallery">
+        <div class="row">
+          <div class="banner">
+            <img class="banner__img"  src="https://d37219swed47g7.cloudfront.net/media/images/guides/the-best-lakeview-restaurants/banners/Tied%20House%20Exterior%202019%20%C2%A9%20Austin%20Isaac%20Peters.jpg" alt="banner">
           </div>
         </div>
-      </div>
-      <div class="view-more">
-        <a href="#"><p>View more on Instagram</p></a>
-      </div>
+      </section>
     </div>
   </script>
 
@@ -236,7 +168,7 @@
           <div class="hour-picker range-slider">
             <div class="output"></div>
             <label class="booking-option-title">Pick a time</label>
-            <input type="range" name="hour" value="12" min="12" max="24" step="0.5">
+            <input type="range" name="hour" value="8" min="8" max="20" step="0.5">
           </div>
         </div>
         <div class="floor-plan">
@@ -245,6 +177,7 @@
           <div class="object table" data-table="1">table-1</div>
           <div class="object table table--round" data-table="2">table-2</div>
           <div class="object table" data-table="3">table-3</div>
+          <div class="object table" data-table="4">table-4</div>
         </div>
         <div class="booking-options"> <!-- options -->
           <label class="booking-option-title"> <!-- option-row -->
@@ -274,9 +207,16 @@
             </div>
             <div class="checkbox"> <!-- checkbox -->
               <label>
-                <input type="checkbox" id="bread" name="starter" value="bread">
+                <input type="checkbox" id="bread" name="starter" value="sour cream">
                 <span class="checkbox__checkmark"></span>
-                Bread
+                Sour cream
+              </label>
+            </div>
+            <div class="checkbox"> <!-- checkbox -->
+              <label>
+                <input type="checkbox" id="beer" name="starter" value="beer">
+                <span class="checkbox__checkmark"></span>
+                Beer
               </label>
             </div>
           </div>
@@ -312,7 +252,7 @@
         </ul>
       </div>
       <ul class="cart__action-buttons no-spacing">
-        <li><a href="#edit">Edit<i class="fas fa-pencil-alt"></i></a></li>
+        <li><a href="#edit">Edit<br><i class="fas fa-pencil-alt"></i></a></li>
         <li><a href="#remove">Remove<i class="fas fa-trash-alt"></i></a></li>
       </ul>
     </li>
@@ -408,15 +348,11 @@
 
   <script type="text/javascript">
     $(document).ready(function(){
-      $('.slide-container').slick({
-        dotsClass: 'dots-slide',
-        dots: true,
+      $('.slider').slick({
+        infinite: true,
         arrows: false,
-        accessibility: false,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        autoplay: true,
-        autoplaySpeed: 3000,
+        slidesToShow: 3,
+        slidesToScroll: 3
       });
     });
   </script>

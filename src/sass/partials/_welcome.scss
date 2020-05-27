@@ -4,339 +4,155 @@
   box-sizing: border-box;
 }
 
-.orderBook-title{
-  text-align: center;
-  color: white;
-}
-
-.orderBook-sub{
-  display: none;
-  padding-top: 10px;
-  font-size: 10px;
-}
 /* PAGE-OPENER */
 
 .welcome-wrapper{
-  background-color: white;
+  background-color: $color-newLight;
   margin-top: 36px;
   border-radius: 5px;
 }
 
 .welcome-page{
-  padding: 36px 0;
-}
-
-.order-pic{
-  overflow: hidden;
-  padding-left: 45px;
-  padding-right: 5px;
-  position: relative;
-
-  .order-tab{
-    position: absolute;
-    color: white;
-    top: 40%;
-    right: -15%;
-    transform: translate(-50%,-50%);
-    transition: 1s ease;
-  }
-
-  img{
-    height: 120px;
-    width: 100%;
-    object-fit: cover;
-    border-radius: 8px;
-    display: block;
-  }
-}
-
-.overlay-tab{
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background-color: transparent;
-  width: 100%;
-  height: 0;
-  transition: 1s ease;
-  overflow: hidden;
-
-
-  .order-subTab{
-    font-size: 15px;
-    color: white;
-    padding-left: 45px;
-    text-align: center;
-  }
-
-  .book-subTab{
-    color: white;
-    font-size: 15px;
-    padding-right: 45px;
-    text-align: center;
-  }
-}
-
-.order-pic:hover .order-tab{
-  top: 30%;
-}
-
-.booking-pic:hover .book-tab{
-  top: 30%;
-}
-
-.order-pic:hover .overlay-tab{
-  height: 43%;
-}
-
-.booking-pic:hover .overlay-tab{
-  height: 43%;
-}
-
-
-.row-opener{
-  height: 130px;
-}
-
-.booking-pic{
-  overflow: hidden;
-  padding-left: 5px;
-  padding-right: 45px;
-  position: relative;
-
-  .book-tab{
-    position: absolute;
-    color: white;
-    top: 40%;
-    right: 0%;
-    transform: translate(-50%,-50%);
-    margin-bottom: 0;
-    transition: 1s ease;
-  }
-
-  img{
-    height: 120px;
-    width: 100%;
-    object-fit: cover;
-    border-radius: 8px;
-    display: block;
-  }
+  padding: 30px 0 10px 0;
 }
 
 .opener {
   padding: 0 30px;
   margin-bottom: 60px;
-}
 
-.opening {
-  background-color: #ff6666;
-  border-radius: 8px;
-  height: 120px;
-  margin-top: 0;
+  &__list {
+    .row-border{
+      border: 2px solid $color-newMain;
+      border-radius: 10px;
+      box-shadow: 5px 10px 18px #888888;
+      margin-top: 10px;
+    }
+
+    .opener__setup{
+      padding: 0;
+
+      img{
+        overflow: hidden;
+        max-width: 100%;
+        height: 150px;
+        object-fit: cover;
+        position: relative;
+        border-bottom-left-radius: 8px;
+        border-top-left-radius: 8px;
+      }
+
+      &--header{
+        padding-top: 5px;
+        margin: 0;
+      }
+    }
+
+    .opener__text {
+      text-align: left;
+      font-family: $font-newText;
+      align-content: center;
+      position: relative;
+      background-color: lighten($color-newDark, 70%);
+      border-bottom-right-radius: 8px;
+      border-top-right-radius: 8px;
+
+      p {
+        padding-top: 10px;
+        margin: 0;
+      }
+    }
+  }
+
+  &__time--container{
+    padding: 10px;
+  }
+
+  &__time--content{
+    background-color: $color-newDark;
+    border-radius: 20px;
+  }
+
+  &__time--header{
+    text-align: center;
+    color: $color-header;
+    font-family: $font-newHeader;
+    font-size: 55px;
+    font-weight: $font-bold;
+  }
+
+  &__time--body{
+    font-family: $font-newText;
+    font-weight: $font-normal;
+    font-size: 20px;
+    padding-bottom: 15px;
+  }
+
+  &__time--img{
+    width: 100%;
+    padding-top: 12px;
+    border-radius: 35px;
+  }
+
 }
 
 /* CAROUSEL */
 
-.slide {
-  padding-left: 20px;
-  padding-right: 20px;
+.slider{
+  padding: 10px 10px;
+  margin-bottom: 20px;
 
-  img {
-    margin: 10px;
-    float: left;
-    height: 195px;
-    width: 32%;
-    object-fit: cover;
-    border-radius: 5px;
+  &__content{
+    padding: 0 5px;
 
-  }
-
-  .opinion{
-    padding-top: 20px;
-
-    p{
-      margin-left: 200px;
-      padding-left: 40px;
-    }
-
-    h5{
-      margin-left: 200px;
-      padding-left: 40px;
+    &--img{
+      max-width: 100%;
+      padding: 5px 5px;
+      margin: 10px 0;
+      object-fit: cover;
+      overflow: hidden;
+      border-radius: 30px;
+      box-shadow: 3px 3px 10px #888888;
+      border: 1px solid red;
     }
   }
 }
-
-.dots-slide{
-  list-style: none;
-  padding: 0;
-  padding-left: 44%;
-
-
-  li{
-    display: inline-block;
-    padding: 20px 5px;
-
-    button{
-      color: transparent;
-      font-size: 8px;
-      border: none;
-      border-radius: 50%;
-      background-color: grey;
-    }
-  }
-
-  .slick-active{
-    button{
-      background-color: black;
-    }
-  }
-}
-
-/*
-.web-carousel{
-  position: relative;
-  height: 195px;
-  width: 80%;
-  margin: 0 auto;
-
-  .carousel__track-container{
-    background-color: lightcoral;
-    height: 100%;
-    position: relative;
-    overflow: hidden;
-
-    .carousel__track{
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      position: relative;
-      height: 100%;
-      transition: transform 250ms ease-in;
-
-      .carousel__slide{
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        width: 100%;
-      }
-    }
-  }
-}
-
-.carousel__images{
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
-}
-
-.carousel__button{
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  border: none;
-  background: transparent;
-  cursor: pointer;
-
-  img {
-    width: 15px;
-  }
-}
-
-.slider__button-left{
-  left: -30px;
-}
-
-.slider__button-right{
-  left: 530px;
-}
-
-.carousel__nav{
-  display: flex;
-  justify-content: center;
-  padding: 35px 0;
-
-  .carousel__indicator{
-    border: 0;
-    border-radius: 50%;
-    width: 11px;
-    height: 11px;
-    background: rgba(0,0,0,.3);
-    margin: 0 7px;
-    cursor: pointer;
-  }
-
-  .current-slide{
-    background: rgba(0,0,0,1);
-  }
-}
-*/
 
 /* GALLERY */
 
 .gallery{
-  margin-top: 100px;
+  margin-top: 30px;
 
-  .row-space{
-    padding-top: 10px;
-    padding-left: 30px;
-    padding-right: 30px;
-
-    .spacer{
-      padding: 0 5px;
-    }
-
-    .box-spacer{
-      overflow: hidden;
-      border-radius: 8px;
-      background-color: black;
-      position: relative;
-      text-align: center;
-      transition: 1s;
-
-      p{
-        color: white;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        visibility: hidden;
-        font-size: 30px;
-
-        &:hover{
-          color: #ff6666;
-          cursor: pointer;
-          transition: .5s;
-        }
-      }
-
-      .icon_1{
-        left: 35%;
-      }
-
-      .icon_2{
-        left: 60%;
-      }
-    }
-  }
-
-  .box-spacer:hover img{
-    opacity: 0.4;
-    transition: 1s;
-  }
-
-  .box-spacer:hover p{
-    opacity: 1;
-    transition: 2s;
-    visibility: visible;
-  }
-
-  img {
-    height: 195px;
-    width: 100%;
-    object-fit: cover;
+  .banner{
+    background-color: #0d0a2b;
     border-radius: 8px;
-    transition: 1s;
+    position: relative;
+
+    &__img{
+      height: 195px;
+      width: 100%;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    &::after{
+      content: 'Come visit us anytime!';
+      color: white;
+      font-family: $font-newHeader;
+      font-size: 40px;
+      display: block;
+      background-color: transparent;
+      text-shadow: 1px 1px 2px black, 0 0 25px white, 0 0 5px yellow;
+      height: 20px;
+      width: 100%;
+      @include center();
+      left: 75%;
+      top: 40%;
+    }
   }
+}
+
+banner__img:hover{
+  opacity: 0.3;
 }
 
 /* FOOTER */

@@ -1,21 +1,21 @@
 {
   "product": [
     {
-      "id": "cake",
+      "id": "cookier",
       "class": "small",
-      "name": "Zio Stefano's Doughnut",
-      "price": 9,
-      "description": "Treat yourself with this soft, freshly baked cookie. The recipe has been handed down from generation to generation in our family and it has won us several first place prizes in local competitions.",
+      "name": "Cookie with lots of fire!",
+      "price": 5,
+      "description": "Freshly baked cookie... what do you need more?... oh yes! hot peppers !",
       "images": [
         "<img class=\"active\" src=\"images/doughnut.svg\">"
       ]
     },
     {
-      "id": "breakfast",
+      "id": "cookieprise",
       "class": "small",
-      "name": "Zia Giulia's Breakfast",
-      "price": 9,
-      "description": "There's no better way to start your day than indulging yourself with a cup of fresh Italian coffee and crispy waffels. Made just for you on the spot, this breakfast combo has been our guests' favorite for over 50 years.",
+      "name": "Cookie with suprise!",
+      "price": 8,
+      "description": "There's nothing better than surprise cookie! u will get every time something special!",
       "images": [
         "<img class=\"active\" src=\"images/breakfast.svg\">"
       ],
@@ -25,31 +25,31 @@
           "type": "radios",
           "options": {
             "latte": {
-              "label": "Latte",
-              "price": 1,
+              "label": "Hot surprise",
+              "price": 3,
               "default": true
             },
             "cappuccino": {
-              "label": "Cappuccino",
-              "price": 1
+              "label": "Sweet surprise",
+              "price": 3
             },
             "espresso": {
-              "label": "Espresso",
-              "price": 1
+              "label": "Sour surprise",
+              "price": 3
             },
             "macchiato": {
-              "label": "Macchiato ",
-              "price": 1
+              "label": "All in one surprise ",
+              "price": 9
             }
           }
         }
       }
     },
     {
-      "id": "pizza",
-      "name": "Nonna Alba's Pizza",
-      "price": 20,
-      "description": "The true taste of Italy &ndash; homemade pizza as prepared by our grandmothers in old-fashoned brick ovens. Choose your favorite topping and enjoy your comfort food! All ingredients come straight from eco-friendly, trusted farms in the Italian countryside.",
+      "id": "BigCookie",
+      "name": "Big Crazy Cookie!",
+      "price": 30,
+      "description": "The true crazy cookie... made from our wildest imaginations!.",
       "images": [
         "<img class=\"active\" src=\"images/pizza/crust.svg\">",
         "<img class=\"active sauce-tomato\" src=\"images/pizza/tomato-sauce.svg\">",
@@ -63,16 +63,16 @@
       ],
       "params": {
         "sauce": {
-          "label": "Sauce",
+          "label": "surprise",
           "type": "radios",
           "options": {
             "tomato": {
-              "label": "Tomato",
+              "label": "sweet surprise",
               "price": 0,
               "default": true
             },
             "cream": {
-              "label": "Sour cream",
+              "label": "Sour surprise",
               "price": 2
             }
           }
@@ -92,7 +92,7 @@
               "default": true
             },
             "greenPeppers": {
-              "label": "Green peppers",
+              "label": "lemon",
               "price": 2,
               "default": true
             },
@@ -102,54 +102,54 @@
               "default": true
             },
             "basil": {
-              "label": "Fresh basil",
+              "label": "Our secret topping!",
               "price": 2,
               "default": true
             },
             "salami": {
-              "label": "Salami",
+              "label": "ham",
               "price": 3
             }
           }
         },
         "crust": {
-          "label": "pizza crust",
+          "label": "Drink",
           "type": "select",
           "options": {
             "standard": {
-              "label": "standard",
+              "label": "water",
               "price": 0,
               "default": true
             },
             "thin": {
-              "label": "thin",
-              "price": 2
+              "label": "beer",
+              "price": 5
             },
             "thick": {
-              "label": "thick",
+              "label": "tea",
               "price": 2
             },
             "cheese": {
-              "label": "cheese in edges",
+              "label": "tomato juice",
               "price": 5
             },
             "wholewheat": {
-              "label": "wholewheat",
-              "price": 3
+              "label": "wine",
+              "price": 10
             },
             "gluten": {
-              "label": "with extra gluten",
-              "price": 0
+              "label": "protein drink",
+              "price": 5
             }
           }
         }
       }
     },
     {
-      "id": "salad",
-      "name": "Nonno Alberto's Salad",
-      "price": 9,
-      "description": "A delicious salad made of fresh, home-grown products on a crispy lettuce base.",
+      "id": "HealthyCookie",
+      "name": "Our Healthy cookie!",
+      "price": 50,
+      "description": "A delicious salad... no no .. a super crazy (but healthy) cookie!",
       "images": [
         "<img class=\"active\" src=\"images/salad/plate.svg\">",
         "<img class=\"active ingredients-cucumber\" src=\"images/salad/cucumber.svg\" style=\"z-index: 1;\">",
@@ -176,12 +176,12 @@
               "default": true
             },
             "olives": {
-              "label": "Olives",
+              "label": "grass",
               "price": 1,
               "default": true
             },
             "feta": {
-              "label": "Feta cheese",
+              "label": "fish",
               "price": 1
             },
             "cheese": {
@@ -206,8 +206,8 @@
   "event": [
     {
       "id": 1,
-      "date": "2020-05-20",
-      "hour": "17:30",
+      "date": "2020-05-28",
+      "hour": "8",
       "table": 1,
       "repeat": "false",
       "duration": 4,
@@ -216,13 +216,13 @@
     },
     {
       "id": 2,
-      "date": "2020-06-20",
-      "hour": "18:00",
-      "table": 3,
+      "date": "2020-06-25",
+      "hour": "8:00",
+      "table": 4,
       "repeat": "daily",
       "duration": 2,
       "ppl": 3,
-      "starters": ["bread", "lemonWater"]
+      "starters": ["bread", "beer"]
     },
     {
       "id": 3,

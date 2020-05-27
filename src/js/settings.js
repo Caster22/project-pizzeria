@@ -68,9 +68,10 @@ export const select = {
     tables: '.floor-plan .table',
     bread: 'bread',
     water: 'water',
+    beer: 'beer',
   },
   nav: {
-    links: '.main-nav a, .booking-pic a, .order-pic a',
+    links: '.main-nav a, .row-border a',
     order: '.welcome-page',
   },
   carousel: {
@@ -110,8 +111,8 @@ export const classNames = {
 
 export const settings = {
   hours: {
-    open: 12,
-    close: 24,
+    open: 8,
+    close: 20,
   },
   amountWidget: {
     defaultValue: 1,

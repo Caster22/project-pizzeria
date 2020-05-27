@@ -5,7 +5,8 @@
 }
 
 .btn-secondary {
-  @include btn($color-main, $color-light, $color-main);
+  @include btn($color-newDark, $color-header, $color-newLight);
+  border-radius: 25px;
 }
 
 .btn-quantity {
@@ -20,11 +21,17 @@
   &--lt {
     @include btn($color-light, $color-main, $color-light);
     padding: 0;
+    margin-right: 20px;
+    position: relative;
     width: 24px;
     height: 18px;
     line-height: 16px;
     font-size: 10px;
     opacity: 0;
+
+    i{
+      @include center();
+    }
   }
 }
 
@@ -32,7 +39,7 @@
 
 input, select {
   border: 1px solid $color-dark;
-  border-radius: $radius;
+  border-radius: 25px;
   padding: $base-size;
 
   // CODE ADDED START

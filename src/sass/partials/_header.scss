@@ -1,24 +1,22 @@
 .header {
-  padding: ($base-size * 5) 0 ($base-size * 8) 0;
-  background: $color-dark;
-  color: $color-light;
+  padding: ($base-size * 4) 0 ($base-size * 4) 0;
+  background: $color-newDark;
+  color: $color-header;
 
-  &__wrapper {
-    position: relative;
-  }
+  /* &__wrapper {} */
 
 }
 
 .logo {
-  display: inline-block;
+  display: block;
   line-height: 1;
 
   &__title {
     margin: 0 0 $base-size 0;
     font-size: ($base-size * 4);
-    font-family: $font-header;
+    font-family: $font-newHeader;
     font-weight: $font-light;
-    text-transform: uppercase;
+    text-align: center;
 
     span {
       font-weight: $font-bold;
@@ -27,32 +25,45 @@
   }
 
   &__subtitle {
+    text-align: center;
     margin: 0;
-    font-size: ($base-size * 1.5);
+    font-family: $font-newText;
+    font-size: ($base-size);
     font-weight: $font-light;
     font-style: italic;
+    text-decoration: underline;
   }
-
 }
 
 .main-nav {
-  position: absolute;
+  left: -20%;
+  position: relative;
+  width: 140%;
   @include flex(row, flex-start, flex-start);
-  bottom: ($base-size * -8);
+  bottom: ($base-size * -3);
 
   a {
     @extend .h2;
-    color: $color-main;
+    color: $color-header;
     text-decoration: none;
     margin-right: ($base-size * 2);
     text-align: center;
     padding: $base-size ($base-size * 2);
-    background: darken($color-dark, 5%);
-    border-top-left-radius: $radius;
-    border-top-right-radius: $radius;
+    background: darken($color-newDark, 5%);
+    border: 1px solid $color-newLight;
+    border-radius: 25%;
+
+    &:hover {
+      text-shadow: 1px 1px 2px black, 0 0 25px white, 0 0 5px yellow;
+    }
 
     &.active {
-      background: lighten($color-dark, 75%);
+      background: lighten($color-newDark, 70%);
+      color: $color-newMain;
+
+      &:hover {
+        text-shadow: 1px 1px 2px lightblue, 0 0 25px blue, 0 0 5px darkblue;
+      }
     }
 
   }
